@@ -1,0 +1,277 @@
+
+
+================================================================
+== Vitis HLS Report for 'sobel'
+================================================================
+* Date:           Wed Aug 10 11:40:34 2022
+
+* Version:        2021.1 (Build 3247384 on Thu Jun 10 19:36:33 MDT 2021)
+* Project:        sobel_hls_prj
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.187 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |   Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   | min |   max  |   Type  |
+    +---------+---------+----------+----------+-----+--------+---------+
+    |       19|   931527|  0.190 us|  9.315 ms|   20|  931528|       no|
+    +---------+---------+----------+----------+-----+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------------------+---------------------------------+---------+---------+-----------+-----------+-----+------+---------+
+        |                                            |                                 |  Latency (cycles) |   Latency (absolute)  |  Interval  | Pipeline|
+        |                  Instance                  |              Module             |   min   |   max   |    min    |    max    | min |  max |   Type  |
+        +--------------------------------------------+---------------------------------+---------+---------+-----------+-----------+-----+------+---------+
+        |grp_sobel_Pipeline_1_fu_222                 |sobel_Pipeline_1                 |       11|       11|   0.110 us|   0.110 us|   11|    11|       no|
+        |grp_sobel_Pipeline_VITIS_LOOP_84_1_fu_232   |sobel_Pipeline_VITIS_LOOP_84_1   |        3|     1282|  30.000 ns|  12.820 us|    3|  1282|       no|
+        |grp_sobel_Pipeline_VITIS_LOOP_114_3_fu_249  |sobel_Pipeline_VITIS_LOOP_114_3  |        9|     1288|  90.000 ns|  12.880 us|    9|  1288|       no|
+        +--------------------------------------------+---------------------------------+---------+---------+-----------+-----------+-----+------+---------+
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+---------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  |   Trip  |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  |  Count  | Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+---------+----------+
+        |- VITIS_LOOP_94_2  |        3|   930240|  3 ~ 1292|          -|          -|  1 ~ 720|        no|
+        +-------------------+---------+---------+----------+-----------+-----------+---------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    234|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        1|    -|     653|   1299|    0|
+|Memory           |        2|    -|       0|      0|    0|
+|Multiplexer      |        -|    -|       -|    317|    -|
+|Register         |        -|    -|     351|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        3|    0|    1004|   1850|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        1|    0|      ~0|      3|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------------------+---------------------------------+---------+----+-----+-----+-----+
+    |                  Instance                  |              Module             | BRAM_18K| DSP|  FF | LUT | URAM|
+    +--------------------------------------------+---------------------------------+---------+----+-----+-----+-----+
+    |CTRL_s_axi_U                                |CTRL_s_axi                       |        0|   0|  112|  168|    0|
+    |mux_42_8_1_1_U53                            |mux_42_8_1_1                     |        0|   0|    0|   20|    0|
+    |mux_42_8_1_1_U54                            |mux_42_8_1_1                     |        0|   0|    0|   20|    0|
+    |mux_42_8_1_1_U55                            |mux_42_8_1_1                     |        0|   0|    0|   20|    0|
+    |mux_42_8_1_1_U56                            |mux_42_8_1_1                     |        0|   0|    0|   20|    0|
+    |mux_42_8_1_1_U57                            |mux_42_8_1_1                     |        0|   0|    0|   20|    0|
+    |mux_42_8_1_1_U58                            |mux_42_8_1_1                     |        0|   0|    0|   20|    0|
+    |mux_42_8_1_1_U59                            |mux_42_8_1_1                     |        0|   0|    0|   20|    0|
+    |mux_42_8_1_1_U60                            |mux_42_8_1_1                     |        0|   0|    0|   20|    0|
+    |mux_42_8_1_1_U61                            |mux_42_8_1_1                     |        0|   0|    0|   20|    0|
+    |mux_42_8_1_1_U62                            |mux_42_8_1_1                     |        0|   0|    0|   20|    0|
+    |mux_42_8_1_1_U63                            |mux_42_8_1_1                     |        0|   0|    0|   20|    0|
+    |mux_42_8_1_1_U64                            |mux_42_8_1_1                     |        0|   0|    0|   20|    0|
+    |grp_sobel_Pipeline_1_fu_222                 |sobel_Pipeline_1                 |        0|   0|   18|  126|    0|
+    |grp_sobel_Pipeline_VITIS_LOOP_114_3_fu_249  |sobel_Pipeline_VITIS_LOOP_114_3  |        1|   0|  506|  693|    0|
+    |grp_sobel_Pipeline_VITIS_LOOP_84_1_fu_232   |sobel_Pipeline_VITIS_LOOP_84_1   |        0|   0|   17|   72|    0|
+    +--------------------------------------------+---------------------------------+---------+----+-----+-----+-----+
+    |Total                                       |                                 |        1|   0|  653| 1299|    0|
+    +--------------------------------------------+---------------------------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +----------------+----------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |     Memory     |                    Module                    | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +----------------+----------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |LineBuffer_0_U  |sobel_Pipeline_VITIS_LOOP_114_3_LineBuffer_2  |        1|  0|   0|    0|  1280|    8|     1|        10240|
+    |LineBuffer_1_U  |sobel_Pipeline_VITIS_LOOP_114_3_LineBuffer_2  |        1|  0|   0|    0|  1280|    8|     1|        10240|
+    +----------------+----------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total           |                                              |        2|  0|   0|    0|  2560|   16|     2|        20480|
+    +----------------+----------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------------------------------------+----------+----+---+----+------------+------------+
+    |                     Variable Name                     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------------------------------------+----------+----+---+----+------------+------------+
+    |lb_r_i_V_1_fu_801_p2                                   |         +|   0|  0|  10|           2|           1|
+    |op2_assign_1_fu_345_p2                                 |         +|   0|  0|  38|          31|           2|
+    |op2_assign_fu_340_p2                                   |         +|   0|  0|  39|          32|           1|
+    |row_V_3_fu_821_p2                                      |         +|   0|  0|  14|          13|           1|
+    |grp_sobel_Pipeline_VITIS_LOOP_114_3_fu_249_dst_TREADY  |       and|   0|  0|   2|           1|           1|
+    |cmp_i_i112_fu_453_p2                                   |      icmp|   0|  0|  18|          32|          32|
+    |cmp_i_i71_fu_458_p2                                    |      icmp|   0|  0|  18|          32|          32|
+    |icmp_ln1049_1_fu_807_p2                                |      icmp|   0|  0|   8|           2|           2|
+    |icmp_ln1049_fu_405_p2                                  |      icmp|   0|  0|   8|           2|           1|
+    |icmp_ln1057_1_fu_397_p2                                |      icmp|   0|  0|  18|          32|          32|
+    |icmp_ln1057_fu_311_p2                                  |      icmp|   0|  0|  18|          32|           1|
+    |icmp_ln97_1_fu_425_p2                                  |      icmp|   0|  0|   8|           2|           3|
+    |icmp_ln97_fu_419_p2                                    |      icmp|   0|  0|   8|           2|           1|
+    |ap_block_state3_on_subcall_done                        |        or|   0|  0|   2|           1|           1|
+    |or_ln97_fu_431_p2                                      |        or|   0|  0|   2|           1|           1|
+    |btm_V_1_fu_487_p3                                      |    select|   0|  0|   2|           1|           1|
+    |btm_V_2_fu_508_p3                                      |    select|   0|  0|   2|           1|           2|
+    |lb_r_i_V_2_fu_813_p3                                   |    select|   0|  0|   2|           1|           1|
+    |mid_V_1_fu_494_p3                                      |    select|   0|  0|   2|           1|           1|
+    |mid_V_2_fu_523_p3                                      |    select|   0|  0|   2|           1|           2|
+    |select_ln97_2_fu_516_p3                                |    select|   0|  0|   3|           1|           1|
+    |select_ln97_4_fu_437_p3                                |    select|   0|  0|   2|           1|           1|
+    |select_ln97_fu_501_p3                                  |    select|   0|  0|   3|           1|           3|
+    |top_V_1_fu_411_p3                                      |    select|   0|  0|   3|           1|           3|
+    |top_V_2_fu_445_p3                                      |    select|   0|  0|   2|           1|           2|
+    +-------------------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                                  |          |   0|  0| 234|         227|         129|
+    +-------------------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------+----+-----------+-----+-----------+
+    |            Name           | LUT| Input Size| Bits| Total Bits|
+    +---------------------------+----+-----------+-----+-----------+
+    |LineBuffer_0_address0      |  14|          3|   11|         33|
+    |LineBuffer_0_ce0           |  14|          3|    1|          3|
+    |LineBuffer_0_ce1           |   9|          2|    1|          2|
+    |LineBuffer_0_d0            |  14|          3|    8|         24|
+    |LineBuffer_0_we0           |  14|          3|    1|          3|
+    |LineBuffer_1_address0      |  14|          3|   11|         33|
+    |LineBuffer_1_ce0           |  14|          3|    1|          3|
+    |LineBuffer_1_ce1           |   9|          2|    1|          2|
+    |LineBuffer_1_d0            |  14|          3|    8|         24|
+    |LineBuffer_1_we0           |  14|          3|    1|          3|
+    |WindowBuffer_0_0_2_fu_106  |  14|          3|    8|         24|
+    |WindowBuffer_0_1_2_fu_110  |  14|          3|    8|         24|
+    |WindowBuffer_1_0_2_fu_114  |  14|          3|    8|         24|
+    |WindowBuffer_1_1_2_fu_118  |  14|          3|    8|         24|
+    |WindowBuffer_2_0_2_fu_122  |  14|          3|    8|         24|
+    |WindowBuffer_2_1_2_fu_126  |  14|          3|    8|         24|
+    |ap_NS_fsm                  |  53|         10|    1|         10|
+    |data_p_keep_V_1_fu_134     |   9|          2|    1|          2|
+    |data_p_strb_V_1_fu_130     |   9|          2|    1|          2|
+    |lb_r_i_V_fu_98             |   9|          2|    2|          4|
+    |row_V_fu_102               |   9|          2|   13|         26|
+    |src_TREADY_int_regslice    |  14|          3|    1|          3|
+    +---------------------------+----+-----------+-----+-----------+
+    |Total                      | 317|         67|  111|        321|
+    +---------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------------------------------+----+----+-----+-----------+
+    |                           Name                          | FF | LUT| Bits| Const Bits|
+    +---------------------------------------------------------+----+----+-----+-----------+
+    |WindowBuffer_0_0_2_fu_106                                |   8|   0|    8|          0|
+    |WindowBuffer_0_0_5_reg_1144                              |   8|   0|    8|          0|
+    |WindowBuffer_0_0_loc_fu_150                              |   8|   0|    8|          0|
+    |WindowBuffer_0_1_2_fu_110                                |   8|   0|    8|          0|
+    |WindowBuffer_0_1_3_reg_1129                              |   8|   0|    8|          0|
+    |WindowBuffer_0_1_loc_fu_158                              |   8|   0|    8|          0|
+    |WindowBuffer_1_0_2_fu_114                                |   8|   0|    8|          0|
+    |WindowBuffer_1_0_5_reg_1149                              |   8|   0|    8|          0|
+    |WindowBuffer_1_0_loc_fu_146                              |   8|   0|    8|          0|
+    |WindowBuffer_1_1_2_fu_118                                |   8|   0|    8|          0|
+    |WindowBuffer_1_1_3_reg_1134                              |   8|   0|    8|          0|
+    |WindowBuffer_1_1_loc_fu_166                              |   8|   0|    8|          0|
+    |WindowBuffer_2_0_2_fu_122                                |   8|   0|    8|          0|
+    |WindowBuffer_2_0_5_reg_1154                              |   8|   0|    8|          0|
+    |WindowBuffer_2_0_loc_fu_154                              |   8|   0|    8|          0|
+    |WindowBuffer_2_1_2_fu_126                                |   8|   0|    8|          0|
+    |WindowBuffer_2_1_3_reg_1139                              |   8|   0|    8|          0|
+    |WindowBuffer_2_1_loc_fu_162                              |   8|   0|    8|          0|
+    |ap_CS_fsm                                                |   9|   0|    9|          0|
+    |btm_V_2_reg_1117                                         |   2|   0|    2|          0|
+    |btm_V_fu_86                                              |   2|   0|    2|          0|
+    |cmp_i_i112_reg_1107                                      |   1|   0|    1|          0|
+    |cmp_i_i71_reg_1112                                       |   1|   0|    1|          0|
+    |cols_read_reg_942                                        |  32|   0|   32|          0|
+    |data_p_keep_V_1_fu_134                                   |   1|   0|    1|          0|
+    |data_p_keep_V_2_loc_fu_142                               |   1|   0|    1|          0|
+    |data_p_strb_V_1_fu_130                                   |   1|   0|    1|          0|
+    |data_p_strb_V_2_loc_fu_138                               |   1|   0|    1|          0|
+    |empty_reg_955                                            |  31|   0|   31|          0|
+    |grp_sobel_Pipeline_1_fu_222_ap_start_reg                 |   1|   0|    1|          0|
+    |grp_sobel_Pipeline_VITIS_LOOP_114_3_fu_249_ap_start_reg  |   1|   0|    1|          0|
+    |grp_sobel_Pipeline_VITIS_LOOP_84_1_fu_232_ap_start_reg   |   1|   0|    1|          0|
+    |icmp_ln1049_reg_1077                                     |   1|   0|    1|          0|
+    |icmp_ln1057_reg_1057                                     |   1|   0|    1|          0|
+    |icmp_ln97_1_reg_1083                                     |   1|   0|    1|          0|
+    |lb_r_i_V_fu_98                                           |   2|   0|    2|          0|
+    |mid_V_2_reg_1123                                         |   2|   0|    2|          0|
+    |mid_V_fu_90                                              |   2|   0|    2|          0|
+    |op2_assign_1_reg_1066                                    |  31|   0|   31|          0|
+    |op2_assign_reg_1061                                      |  32|   0|   32|          0|
+    |or_ln97_reg_1089                                         |   1|   0|    1|          0|
+    |row_V_fu_102                                             |  13|   0|   13|          0|
+    |rows_read_reg_948                                        |  32|   0|   32|          0|
+    |top_V_2_reg_1095                                         |   2|   0|    2|          0|
+    |top_V_fu_94                                              |   2|   0|    2|          0|
+    +---------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                    | 351|   0|  351|          0|
+    +---------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+--------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  | Source Object|    C Type    |
++--------------------+-----+-----+------------+--------------+--------------+
+|s_axi_CTRL_AWVALID  |   in|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_AWREADY  |  out|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_AWADDR   |   in|    5|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_WVALID   |   in|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_WREADY   |  out|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_WDATA    |   in|   32|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_WSTRB    |   in|    4|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_ARVALID  |   in|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_ARREADY  |  out|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_ARADDR   |   in|    5|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_RVALID   |  out|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_RREADY   |   in|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_RDATA    |  out|   32|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_RRESP    |  out|    2|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_BVALID   |  out|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_BREADY   |   in|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_BRESP    |  out|    2|       s_axi|          CTRL|        scalar|
+|ap_clk              |   in|    1|  ap_ctrl_hs|         sobel|  return value|
+|ap_rst_n            |   in|    1|  ap_ctrl_hs|         sobel|  return value|
+|interrupt           |  out|    1|  ap_ctrl_hs|         sobel|  return value|
+|src_TDATA           |   in|    8|        axis|  src_V_data_V|       pointer|
+|src_TVALID          |   in|    1|        axis|  src_V_last_V|       pointer|
+|src_TREADY          |  out|    1|        axis|  src_V_last_V|       pointer|
+|src_TLAST           |   in|    1|        axis|  src_V_last_V|       pointer|
+|src_TKEEP           |   in|    1|        axis|  src_V_keep_V|       pointer|
+|src_TSTRB           |   in|    1|        axis|  src_V_strb_V|       pointer|
+|dst_TDATA           |  out|    8|        axis|  dst_V_data_V|       pointer|
+|dst_TVALID          |  out|    1|        axis|  dst_V_last_V|       pointer|
+|dst_TREADY          |   in|    1|        axis|  dst_V_last_V|       pointer|
+|dst_TLAST           |  out|    1|        axis|  dst_V_last_V|       pointer|
+|dst_TKEEP           |  out|    1|        axis|  dst_V_keep_V|       pointer|
+|dst_TSTRB           |  out|    1|        axis|  dst_V_strb_V|       pointer|
++--------------------+-----+-----+------------+--------------+--------------+
+
